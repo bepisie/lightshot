@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>useless lightshot</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="center">
+    <button onclick="openRandomPrntSc()">PLEASE TAKE ME SOMEWHERE</button>
+</div>
+
+<script>
+    function generateRandomNumber() {
+        return Math.floor(Math.random() * 100); // Generates a random number between 0 and 99
+    }
+
+    function generateRandomLetters(length) {
+        const letters = 'abcdefghijklmnopqrstuvwxyz';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += letters.charAt(Math.floor(Math.random() * letters.length));
+        }
+        return result;
+    }
+
+    function openRandomPrntSc() {
+        const randomNumber = generateRandomNumber();
+        const randomLetters = generateRandomLetters(4);
+        const url = `https://prnt.sc/${randomNumber.toString().padStart(2, '0')}${randomLetters}`;
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
+
+
